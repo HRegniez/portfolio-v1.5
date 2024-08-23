@@ -33,27 +33,27 @@ const pastTech = [
 
 export const CompetenceSection = () => {
     return (
-        <Card className="w-full" variant="destructive">
+        <Card className="w-full">
                     <CardHeader>
                         <CardTitle className="text-xl">Mes compétences</CardTitle>
                     </CardHeader>
                     <CardContent className="md:grid grid-cols-3 gap-8">
-                        <Card className="bg-primary col-span-2 h-full">
+                        <Card className=" col-span-2 h-full">
                             <CardHeader>
-                                <h4>J&apos;aime travailler avec</h4>
+                                <h4 className="text-xl">J&apos;aime travailler avec</h4>
                             </CardHeader>
                             <CardContent className="grid grid-cols-3 gap-4">
                                 {technologies.map((tech, index) => (
-                                    <Card key={index} className="flex flex-col items-center justify-center p-2 h-40">
-                                        <Image src={tech.icon} alt={`${tech.name} icon`} width={40} height={40} />
+                                    <div key={index} className="flex flex-col items-center justify-center p-2 h-40">
+                                        <Image src={tech.icon} alt={`${tech.name} icon`} width={80} height={80} />
                                         <h5 className="mt-2 text-sm">{tech.name}</h5>
-                                    </Card>
+                                    </div>
                                 ))}
                             </CardContent>
                         </Card>
-                        <Card className="bg-primary h-full">
+                        <Card className="bg-secondary h-full">
                             <CardHeader>
-                                <h4>Parcours</h4>
+                                <h4 className="text-xl">Parcours</h4>
                             </CardHeader>
                             <CardContent>
                                 <ul className="space-y-4">
@@ -61,20 +61,20 @@ export const CompetenceSection = () => {
                                         <li key={index} className="border-b pb-2 last:border-b-0">
                                             <span className="block text-sm font-semibold">{item.year}</span>
                                             <h5 className="text-base font-medium">{item.title}</h5>
-                                            <p className="text-sm text-gray-600">{item.institution}</p>
+                                            <p className="text-sm text-muted-foreground">{item.institution}</p>
                                         </li>
                                     ))}
                                 </ul>
                             </CardContent>
                         </Card>
-                        <Card className="bg-primary col-span-3 h-[30vh]">
+                        <Card className=" col-span-3 h-full">
                             <CardHeader>
-                                <h4>Technologies que j&apos;ai utilisées</h4>
+                                <h4 className="text-xl">Technologies que j&apos;ai utilisées</h4>
                             </CardHeader>
-                            <CardContent className="grid grid-cols-6 gap-4">
+                            <CardContent className="flex flex-wrap gap-8 max-w-5xl my-8 mx-auto">
                                 {pastTech.map((tech, index) => (
-                                    <Card key={index} className="flex flex-col items-center justify-center p-2 h-24">
-                                        <Image src={tech.icon} alt={`${tech.name} icon`} width={30} height={30} />
+                                    <Card key={index} className="flex flex-col bg-destructive items-center justify-center mx-auto w-32 h-32">
+                                        <Image src={tech.icon} alt={`${tech.name} icon`} width={60} height={60} />
                                         <h5 className="mt-2 text-xs">{tech.name}</h5>
                                     </Card>
                                 ))}

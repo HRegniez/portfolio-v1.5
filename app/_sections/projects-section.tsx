@@ -115,7 +115,7 @@ export const ProjectsSection = () => {
     };
 
     return (
-        <Card>
+        <Card className="bg-muted my-16">
             <CardHeader>
                 <h2 className="text-2xl font-bold">
                     Projets

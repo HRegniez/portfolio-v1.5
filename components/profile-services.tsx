@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faDisplay, faChartLine, faWrench } from '@fortawesome/free-solid-svg-icons'
 import Marquee from "./marquee"
+import { MarginWrapper } from "./ui/margin-wrapper"
 
 const servicesData = [
     {
@@ -29,20 +30,22 @@ const servicesData = [
 export const ProfileServices = () => {
     return (
         <div>
-            <h3 className="text-xl">Services</h3>
-            <Marquee pauseOnHover>
-                {servicesData.map((service, index) => (
-                    <Card key={index} className="p-4 hover:bg-primary w-80 bg-muted">
-                        <CardHeader className="flex flex-col items-center gap-2 p-0">
-                            <FontAwesomeIcon icon={service.icon} className="text-primary w-40 h-40 my-4" />
-                            <CardTitle className="text-lg">{service.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="pt-2">
-                            <p>{service.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </Marquee>
+            <MarginWrapper className="my-8">
+                <h3 className="text-xl">Services</h3>
+                <Marquee pauseOnHover className="my-8">
+                    {servicesData.map((service, index) => (
+                        <Card key={index} className="p-4 hover:bg-primary w-80 bg-muted">
+                            <CardHeader className="flex flex-col items-center gap-2 p-0">
+                                <FontAwesomeIcon icon={service.icon} className="text-primary w-40 h-40 my-4" />
+                                <CardTitle className="text-lg">{service.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="pt-2">
+                                <p>{service.description}</p>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </Marquee>
+            </MarginWrapper>
         </div>
     )
 }

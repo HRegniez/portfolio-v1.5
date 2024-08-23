@@ -3,16 +3,18 @@ import { HeroParallax } from "./_sections/hero-parallax";
 import { ProjectsSection } from "./_sections/projects-section";
 import { ProfileSection } from "./_sections/profile-section";
 import { CompetenceSection } from "./_sections/competence-section";
+import { MarginWrapper } from "../components/ui/margin-wrapper";
 
 export default function Home() {
   return (
     <main>
       <HeroParallax>
-        <div className="flex flex-col gap-8 p-8 max-w-[1200px] mx-auto">
+        <MarginWrapper>
           <ProfileSection />
           <CompetenceSection />
           <ProjectsSection />
-        </div>
+        </MarginWrapper>
+        
       </HeroParallax>
 
       
