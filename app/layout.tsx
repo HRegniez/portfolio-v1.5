@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Inter as FontSans } from "next/font/google";
+import { NavigationMenu, NavigationMenuList, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +22,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <header className="h-16 flex justify-between items-center bg-secondary">
+          <NavigationMenu className="flex justify-between items-center max-w-[1200px] sm:mx-[auto] px-4">
+            <div className="flex items-center justify-center h-12 w-12">
+              <Button variant="secondary" className="text-2xl font-bold h-12 w-14 hover:bg-primary-foreground hover:text-primary" asChild>
+                <Link href="/" className="text-3xl font-bold">HR</Link>
+              </Button>
+            </div>
+            <NavigationMenuList className="flex justify-between items-center gap-4">
+              <NavigationMenuLink href="#projets" asChild>
+                <Button variant="secondary" className="font-bold h-10 hover:bg-primary-foreground hover:text-primary">PROJETS</Button>
+              </NavigationMenuLink>
+              <NavigationMenuLink href="#Profile" asChild>
+                <Button variant="secondary" className="font-bold h-10 hover:bg-primary-foreground hover:text-primary">PROFILE</Button>
+              </NavigationMenuLink>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
