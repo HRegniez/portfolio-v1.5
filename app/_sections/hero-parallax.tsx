@@ -48,7 +48,7 @@ export const HeroParallax = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       ref={ref}
-      className="h-full overflow-x-hidden pt-32 antialiased flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-full overflow-hidden pb-[500px] antialiased flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <HeroHeader />
       <motion.div
