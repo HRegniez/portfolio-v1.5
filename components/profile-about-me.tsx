@@ -7,8 +7,8 @@ export const ProfileAboutMe = () => {
             <CardHeader>
             <CardTitle className="text-xl mb-4">A propos de moi</CardTitle>
             </CardHeader>
-            <CardContent className="flex gap-4 ">
-                <article className="flex flex-col gap-4 justify-between h-[40svh]">
+            <CardContent className="grid grid-cols-3 gap-4 ">
+                <article className="flex flex-col col-span-2 gap-4 justify-between h-[40svh]">
 
                 <p className="text-foreground">
                     Bonjour! Je suis Henri, <br /> 
@@ -19,7 +19,7 @@ export const ProfileAboutMe = () => {
                     à la recherche de projets innovants.
                 </p>
                 </article>
-                <div className="w-[200px] h-[200px] bg-muted-foreground rounded-full">
+                <div className="w-[200px] col-span-1 h-[200px] bg-muted-foreground rounded-full">
                     <Image src="/images/profile.png" alt="Henri" width={400} height={400} />
                 </div>
             </CardContent>
