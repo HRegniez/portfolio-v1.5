@@ -1,4 +1,5 @@
 import { HeroOrbit } from "./hero-orbit"
+import { ContactDialog } from "./contact-dialog"
 
 export const HeroHeader = () => {
     return (
@@ -11,6 +12,9 @@ export const HeroHeader = () => {
   Développeur web front-end freelance passionné, je crée des interfaces modernes avec React, Next.js et Tailwind CSS.
           </p>
         <HeroOrbit />
+        <div className="absolute bottom-[-30svh] left-8">
+          <ContactDialog />
+        </div>
         </div>
       </div>
     );

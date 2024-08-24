@@ -52,7 +52,6 @@ export default function RootLayout({
           <div className="flex justify-between items-center max-w-[1200px] py-4 sm:mx-[auto] px-4">
             <p className="text-sm">© 2024 - Henri Regniez</p>
           </div>
-
         </footer>
       </body>
     </html>

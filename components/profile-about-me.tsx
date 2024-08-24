@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const ProfileAboutMe = () => {
     return (
-        <Card className="bg-background-light">
+        <Card className="bg-secondary">
             <CardHeader>
             <CardTitle className="text-xl mb-4">A propos de moi</CardTitle>
             </CardHeader>
