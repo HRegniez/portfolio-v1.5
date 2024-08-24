@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const ProfileAboutMe = () => {
     return (
-        <Card className="bg-muted hover:bg-muted-foreground">
+        <Card className="bg-background-light">
             <CardHeader>
             <CardTitle className="text-xl mb-4">A propos de moi</CardTitle>
             </CardHeader>
@@ -19,9 +19,11 @@ export const ProfileAboutMe = () => {
                     à la recherche de projets innovants.
                 </p>
                 </article>
-                <div className="w-[200px] col-span-1 h-[200px] bg-muted-foreground rounded-full">
-                    <Image src="/images/profile.png" alt="Henri" width={400} height={400} />
-                </div>
+                <article className="bg-background">
+                    <div className="w-[150px] col-span-1 h-[150px] bg-black rounded-full">
+                        <Image src="/images/profile.png" alt="Henri" width={400} height={400} />
+                    </div>
+                </article>
             </CardContent>
             
         </Card>

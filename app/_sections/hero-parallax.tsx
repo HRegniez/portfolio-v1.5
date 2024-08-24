@@ -44,6 +44,10 @@ export const HeroParallax = ({ children }: { children: React.ReactNode }) => {
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+  const translateX = useSpring(
+    useTransform(scrollYProgress, [0, 0.2], [-400, 0]),
+    springConfig
+  );
 
   return (
     <div
@@ -56,6 +60,7 @@ export const HeroParallax = ({ children }: { children: React.ReactNode }) => {
           rotateX,
           rotateZ,
           translateY,
+          translateX,
           opacity,
         }}
         className=""
@@ -65,7 +70,3 @@ export const HeroParallax = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
-
-
-
-
