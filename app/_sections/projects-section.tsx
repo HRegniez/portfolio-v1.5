@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "../../components/ui/card"
 import Image from "next/image"
 import { Button } from "../../components/ui/button"
 
@@ -116,31 +116,45 @@ export const ProjectsSection = () => {
 
     return (
         <Card className="bg-muted my-16">
-            <CardHeader>
+            <CardHeader >
                 <h2 className="text-2xl font-bold">
                     Projets
                 </h2>
             </CardHeader>
             <CardContent>
-                <div className="md:grid grid-cols-2 gap-4">
+                <div className="md:grid grid-cols-2 gap-4 ">
                     {projects.slice(0, visibleProjects).map((project) => (
-                        <div key={project.id} className="w-full h-96 bg-primary rounded-lg shadow-lg overflow-hidden relative mb-4 md:mb-0">
-                            <Image 
-                                src={project.imgLink} 
-                                alt={project.title} 
-                                layout="fill" 
-                                objectFit="cover"
-                            />
-                            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                                <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                                <p className="text-sm text-white mt-2">{project.description}</p>
-                                <div className="flex mt-2">
+                        <Card key={project.id} className="w-full h-96 bg-primary sm:my-8 rounded-lg shadow-lg overflow-hidden relative mb-4 md:mb-0 group hover:scale-[1.02] transition-transform duration-1000 ease-in-out">
+                            <CardContent className="relative p-0 h-full flex flex-col justify-end">
+                                <div className="absolute inset-0 transition-transform duration-300 ease-in group-hover:scale-105">
+                                    <Image 
+                                        src={project.imgLink} 
+                                        alt={project.title} 
+                                        fill
+                                        style={{objectFit: "cover"}}
+                                    />
+                                </div>
+                                <div className="relative inset-0 bg-black bg-opacity-70 p-4 transition-all duration-300 ease-out h-30 translate-y-10 transform group-hover:translate-y-0">
+                                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                                    <p className="text-sm w-[75%] text-white mt-2 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100">{project.description}</p>
+                                </div>
+                                <Button className="absolute bottom-0 right-0 p-2 m-4">
+                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                                        Github
+                                    </a>
+                                </Button>
+                                <div className="flex absolute top-0 right-0 mt-2">
                                     {project.techs.map((tech) => (
                                         <span key={tech} className="mr-2 text-xs bg-white text-black px-2 py-1 rounded">{tech}</span>
                                     ))}
                                 </div>
-                            </div>
-                        </div>
+                            </CardContent>
+                            <CardFooter className="p-0">
+                                <a href={project.siteLink} target="_blank" rel="noopener noreferrer" className="w-full h-full absolute top-0 left-0 z-10">
+                                    <span className="sr-only">View project</span>
+                                </a>
+                            </CardFooter>
+                        </Card>
                     ))}
                 </div>
                 {visibleProjects < projects.length && (

@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
+import IconCloud from "@/components/icon-cloud"
+
 
 
 const technologies = [
@@ -28,7 +30,13 @@ const pastTech = [
     { name: "THREE js", icon: "/icons/THREEjs.svg" },
     { name: "Node js", icon: "/icons/node-js-seeklogo.svg" },
     { name: "MongoDB", icon: "/icons/mongodb-seeklogo.svg" },
-    { name: "Express js", icon: "/icons/express-js-seeklogo.svg" }
+    { name: "Express js", icon: "/icons/express-js-seeklogo.svg" },
+    { name: "HTML", icon: "/icons/icons8-html-5.svg" },
+    { name: "CSS", icon: "/icons/icons8-css3.svg" },
+    { name: "JS", icon: "/icons/icons8-javascript.svg" },
+    { name: "REACT", icon: "/icons/icons8-réagir.svg" },
+    { name: "NEXT JS", icon: "/icons/next-js-icon-seeklogo.svg" },
+    { name: "TAILWIND", icon: "/icons/Tailwind_CSS_Logo.svg" }
 ]
 
 export const CompetenceSection = () => {
@@ -72,12 +80,7 @@ export const CompetenceSection = () => {
                                 <h4 className="text-xl">Technologies que j&apos;ai utilisées</h4>
                             </CardHeader>
                             <CardContent className="flex flex-wrap gap-8 max-w-5xl my-8 mx-auto">
-                                {pastTech.map((tech, index) => (
-                                    <Card key={index} className="flex flex-col bg-destructive items-center justify-center mx-auto w-32 h-32">
-                                        <Image src={tech.icon} alt={`${tech.name} icon`} width={60} height={60} />
-                                        <h5 className="mt-2 text-xs">{tech.name}</h5>
-                                    </Card>
-                                ))}
+                                <IconCloud icons={pastTech} />
                             </CardContent>
                         </Card>
                     </CardContent>
