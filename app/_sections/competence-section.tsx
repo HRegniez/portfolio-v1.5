@@ -47,6 +47,7 @@ const pastTech = [
     { name: "PostCSS", icon: "/icons/postcss-icon.svg" },
     { name: "GSAP", icon: "/icons/gsap-icon.svg" },
     { name: "Liveblocks", icon: "/icons/liveblocks-icon.svg" },
+    // Slack, Python, Django, Mongoose, SQL
 ]
 
 export const CompetenceSection = () => {

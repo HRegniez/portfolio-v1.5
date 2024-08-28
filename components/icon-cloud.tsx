@@ -9,6 +9,7 @@ import {
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
+import Image from 'next/image';
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -37,7 +38,19 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
+export const renderCustomIcon = (icon: SimpleIcon | string, theme: string) => {
+  if (typeof icon === 'string') {
+    return (
+      <Image
+        src={icon}
+        alt="Icon"
+        width={42}
+        height={42}
+        style={{ filter: 'none' }} // Remove any filters that might affect color
+      />
+    );
+  }
+
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
@@ -127,10 +140,10 @@ export default function IconCloud({ icons }: DynamicCloudProps) {
       
       if (!simpleIcon) {
         console.warn(`Icon not found for: ${icon.name} (slug: ${slug})`);
-        return null;
+        return renderCustomIcon(icon.icon, theme || "dark");
       }
       
-      return renderCustomIcon(simpleIcon, theme || "light");
+      return renderCustomIcon(simpleIcon, theme || "dark");
     }).filter(Boolean);
   }, [data, theme, icons]);
 
