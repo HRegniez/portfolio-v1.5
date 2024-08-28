@@ -15,6 +15,7 @@ const technologies = [
 
 const background = [
     { year: "2013", title: "A-level (équivalent Bac-S)", institution: "St Julians School - Newport, UK" },
+    { year: "2014 - 2015", title: "DUT Science et Genie des materiaux", institution: "IUT Bourget du lac" },
     { year: "2021 - 2022", title: "Initiation au métier de développeur web", institution: "OpenClassrooms" },
     { year: "2023", title: "Formation Intégrateur Web", institution: "OpenClassrooms" }
 ]
@@ -36,7 +37,16 @@ const pastTech = [
     { name: "JS", icon: "/icons/icons8-javascript.svg" },
     { name: "REACT", icon: "/icons/icons8-réagir.svg" },
     { name: "NEXT JS", icon: "/icons/next-js-icon-seeklogo.svg" },
-    { name: "TAILWIND", icon: "/icons/Tailwind_CSS_Logo.svg" }
+    { name: "TAILWIND", icon: "/icons/Tailwind_CSS_Logo.svg" },
+    { name: "TypeScript", icon: "/icons/icon8-typescript.svg" },
+    { name: "Prisma", icon: "/icons/icon8-prisma-orm.svg" },
+    { name: "VS Code", icon: "/icons/icon8-vs-code.svg" },
+    { name: "Figma", icon: "/icons/icon8-figma.svg" },
+    { name: "Zod", icon: "/icons/zod-icon.svg" },
+    { name: "ESLint", icon: "/icons/eslint-icon.svg" },
+    { name: "PostCSS", icon: "/icons/postcss-icon.svg" },
+    { name: "GSAP", icon: "/icons/gsap-icon.svg" },
+    { name: "Liveblocks", icon: "/icons/liveblocks-icon.svg" },
 ]
 
 export const CompetenceSection = () => {

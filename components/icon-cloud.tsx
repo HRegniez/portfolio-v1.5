@@ -31,8 +31,8 @@ export const cloudProps: Omit<ICloud, "children"> = {
     clickToFront: 500,
     tooltipDelay: 0,
     outlineColour: "#0000",
-    maxSpeed: 0.04,
-    minSpeed: 0.02,
+    maxSpeed: 0.02, // Reduced from 0.04 to 0.02
+    minSpeed: 0.01, // Reduced from 0.02 to 0.01
     // dragControl: false,
   },
 };
@@ -68,19 +68,36 @@ export default function IconCloud({ icons }: DynamicCloudProps) {
   const { theme } = useTheme();
 
   useEffect(() => {
-    const iconSlugs = icons.map(icon => {
-      // Create a mapping for special cases
-      const slugMap: { [key: string]: string } = {
-        'SASS/SCSS': 'sass',
-        'THREE js': 'threedotjs',
-        'Node js': 'nodedotjs',
-        'Express js': 'express',
-      };
-      
-      // Use the mapping if available, otherwise use a default slug
-      const slug = slugMap[icon.name] || icon.name.toLowerCase().replace(/\s/g, '');
-      return slug;
-    });
+    const slugMap: { [key: string]: string } = {
+      'SASS/SCSS': 'sass',
+      'THREE js': 'threedotjs',
+      'Node js': 'nodejs',
+      'Express js': 'express',
+      'NEXT JS': 'nextdotjs',
+      'JS': 'javascript',
+      'REACT': 'react',
+      'TAILWIND': 'tailwindcss',
+      'VS Code': 'visualstudiocode',
+      'GitHub': 'github',
+      'MongoDB': 'mongodb',
+      'TypeScript': 'typescript',
+      'Prisma': 'prisma',
+      'Figma': 'figma',
+      'Vite': 'vite',
+      'Webpack': 'webpack',
+      'Redux': 'redux',
+      'Git': 'git',
+      'Swagger': 'swagger',
+      'HTML': 'html5',
+      'CSS': 'css3',
+      'Zod': 'zod',
+      'ESLint': 'eslint',
+      'PostCSS': 'postcss',
+      'GSAP': 'greensock',
+      'Liveblocks': 'liveblocks',
+    };
+
+    const iconSlugs = icons.map(icon => slugMap[icon.name] || icon.name.toLowerCase().replace(/\s/g, ''));
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
   }, [icons]);
 
@@ -91,18 +108,29 @@ export default function IconCloud({ icons }: DynamicCloudProps) {
       const slugMap: { [key: string]: string } = {
         'SASS/SCSS': 'sass',
         'THREE js': 'threedotjs',
-        'Node js': 'nodedotjs',
+        'Node js': 'nodejs',
         'Express js': 'express',
+        'NEXT JS': 'nextdotjs',
+        'JS': 'javascript',
+        'REACT': 'react',
+        'TAILWIND': 'tailwindcss',
+        'VS Code': 'visualstudiocode',
+        'GitHub': 'github',
+        'MongoDB': 'mongodb',
+        'TypeScript': 'typescript',
+        'Prisma': 'prisma',
+        'Figma': 'figma',
       };
       
       const slug = slugMap[icon.name] || icon.name.toLowerCase().replace(/\s/g, '');
       const simpleIcon = data.simpleIcons[slug];
       
       if (!simpleIcon) {
-        console.warn(`Icon not found for: ${icon.name}`);
+        console.warn(`Icon not found for: ${icon.name} (slug: ${slug})`);
+        return null;
       }
       
-      return simpleIcon ? renderCustomIcon(simpleIcon, theme || "light") : null;
+      return renderCustomIcon(simpleIcon, theme || "light");
     }).filter(Boolean);
   }, [data, theme, icons]);
 
