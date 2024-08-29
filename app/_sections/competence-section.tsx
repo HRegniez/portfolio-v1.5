@@ -38,10 +38,10 @@ const pastTech = [
     { name: "REACT", icon: "/icons/icons8-réagir.svg" },
     { name: "NEXT JS", icon: "/icons/next-js-icon-seeklogo.svg" },
     { name: "TAILWIND", icon: "/icons/Tailwind_CSS_Logo.svg" },
-    { name: "TypeScript", icon: "/icons/icon8-typescript.svg" },
-    { name: "Prisma", icon: "/icons/icon8-prisma-orm.svg" },
-    { name: "VS Code", icon: "/icons/icon8-vs-code.svg" },
-    { name: "Figma", icon: "/icons/icon8-figma.svg" },
+    { name: "TypeScript", icon: "/icons/icons8-typescript.svg" },
+    { name: "Prisma", icon: "/icons/icons8-prisma-orm.svg" },
+    { name: "VS Code", icon: "/icons/icons8-vs-code.svg" },
+    { name: "Figma", icon: "/icons/icons8-figma.svg" },
     { name: "Zod", icon: "/icons/zod-icon.svg" },
     { name: "ESLint", icon: "/icons/eslint-icon.svg" },
     { name: "PostCSS", icon: "/icons/postcss-icon.svg" },
@@ -64,7 +64,13 @@ export const CompetenceSection = () => {
                             <CardContent className="grid grid-cols-3 gap-4">
                                 {technologies.map((tech, index) => (
                                     <div key={index} className="flex flex-col items-center justify-center p-2 h-40">
-                                        <Image src={tech.icon} alt={`${tech.name} icon`} width={80} height={80} />
+                                        <Image 
+                                            src={tech.icon} 
+                                            alt={`${tech.name} icon`} 
+                                            width={80} 
+                                            height={80}
+                                            style={{ width: 'auto', height: 'auto', maxWidth: '80px', maxHeight: '80px' }}
+                                        />
                                         <h5 className="mt-2 text-sm">{tech.name}</h5>
                                     </div>
                                 ))}
