@@ -41,7 +41,7 @@ export const HeroParallax = ({ children }: { children: React.ReactNode }) => {
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
+    useTransform(scrollYProgress, [0, 0.2], [-1200, 500]),
     springConfig
   );
   const translateX = useSpring(
@@ -63,7 +63,7 @@ export const HeroParallax = ({ children }: { children: React.ReactNode }) => {
           translateX,
           opacity,
         }}
-        className=""
+        className="mt-[500px] md:mt-[100px] "
       >
         {children}
       </motion.div>
