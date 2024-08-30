@@ -11,7 +11,7 @@ export default function CompetencesParcours({ background }: { background: any[] 
         <CardContent>
             <div className="space-y-4">
                 {background.map((item, index) => (
-                    <li key={index} className="pb-2 last:border-b-0">
+                    <li key={index} className="pb-2 list-none last:border-b-0">
                         <span className="block text-sm font-semibold">{item.year}</span>
                         <h5 className="text-base font-medium">{item.title}</h5>
                         <p className="text-sm text-muted-foreground">{item.institution}</p>
