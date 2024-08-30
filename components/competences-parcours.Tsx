@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
-import { ThreeDCardBody, ThreeDCardContainer, ThreeDCardItem } from './ui/3d-card';
 
 
 export const CompetencesParcours = ({ background }: { background: any[] }) => {
