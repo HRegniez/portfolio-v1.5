@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
 
 
-export const CompetencesParcours = ({ background }: { background: any[] }) => {
+export default function CompetencesParcours({ background }: { background: any[] }) {
     return (
     <Card className="bg-secondary h-full">
         <CardHeader>
