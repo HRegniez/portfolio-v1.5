@@ -26,17 +26,17 @@ export const HeroOrbit = () => {
             {outerOrbitData.map(({ Icon, delay, className, name }, index) => (
                 <OrbitingCircles
                     key={index}
-                    className="absolute left-[55svw] top-[15vh] w-24 h-24"
+                    className="absolute left-[56svw] -top-[2vh] w-24 h-24"
                     duration={100}
                     delay={delay}
                     radius={240}
                 >
                     <div 
-                        className="relative"
+                        className="relative whitespace-nowrap overflow-visible "
                         onMouseEnter={() => setHoveredName(name)}
                         onMouseLeave={() => setHoveredName('')}
                     >
-                        <Icon className={`border-none text-muted hover:text-primary ${className}`}/>
+                        <Icon className={`border-none text-muted hover:text-primary hover:scale-110 transition-all duration-300 ${className}`}/>
                         {hoveredName === name && (
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-background text-foreground text-sm rounded shadow">
                                 {name}
@@ -49,18 +49,18 @@ export const HeroOrbit = () => {
             {innerOrbitData.map(({ Icon, delay, className, name }, index) => (
                 <OrbitingCircles
                     key={index}
-                    className="absolute left-[55svw] top-[15vh] w-24 h-24"
+                    className="absolute left-[55svw] top-0 w-24 h-24"
                     duration={60}
                     delay={delay}
                     radius={100}
                     reverse
                 >
                     <div 
-                        className="relative"
+                        className="relative whitespace-nowrap overflow-visible"
                         onMouseEnter={() => setHoveredName(name)}
                         onMouseLeave={() => setHoveredName('')}
                     >
-                        <Icon className={`border-none text-muted hover:text-primary ${className}`}/>
+                        <Icon className={`border-none text-muted hover:text-primary hover:scale-110 transition-all duration-300 ${className}`}/>
                         {hoveredName === name && (
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-background text-foreground text-sm rounded shadow">
                                 {name}

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faDisplay, faChartLine, faWrench } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faDisplay, faChartLine, faWrench, faMobileAlt, faTabletAlt, faSearch, faCheckCircle, faHeadset, faRocket } from '@fortawesome/free-solid-svg-icons'
 import Marquee from "./marquee"
 import { MarginWrapper } from "./ui/margin-wrapper"
 
@@ -8,22 +8,37 @@ const servicesData = [
     {
         icon: faCode,
         title: "Développement Web",
-        description: "Application personnalisée adaptée aux besoins du client."
+        description: "Création de sites web personnalisés avec React et Tailwind CSS."
     },
     {
         icon: faDisplay,
         title: "Multi-plateforme",
-        description: "Compatible avec tous les appareils, ordinateurs de bureau, mobiles et tablettes."
+        description: "Développement cross-browser compatible avec tous les appareils."
     },
     {
-        icon: faChartLine,
-        title: "SEO",
-        description: "Amélioration de la visibilité en ligne grâce à l'optimisation du code et à des améliorations stratégiques."
+        icon: faMobileAlt,
+        title: "Mobile-first",
+        description: "Approche mobile-first pour une expérience optimale sur tous les écrans."
+    },
+    {
+        icon: faTabletAlt,
+        title: "Responsive Design",
+        description: "Conception adaptative pour une compatibilité parfaite sur tous les appareils."
+    },
+    {
+        icon: faSearch,
+        title: "Optimisation SEO",
+        description: "Amélioration de la visibilité en ligne et respect des normes W3C."
     },
     {
         icon: faWrench,
-        title: "Maintenance Web",
-        description: "Assurer un fonctionnement sans faille et une optimisation continue du code."
+        title: "Support et Maintenance",
+        description: "Assurer un fonctionnement optimal et une mise à jour continue du site."
+    },
+    {
+        icon: faRocket,
+        title: "Animations et Performance",
+        description: "Animations fluides et optimisation des performances web."
     }
 ];
 
@@ -34,9 +49,9 @@ export const ProfileServices = () => {
                 <h3 className="text-xl">Services</h3>
                 <Marquee pauseOnHover className="my-8">
                     {servicesData.map((service, index) => (
-                        <Card key={index} className="p-4 hover:bg-primary w-80 bg-muted">
+                        <Card key={index} className="p-4 group hover:bg-muted w-80">
                             <CardHeader className="flex flex-col items-center gap-2 p-0">
-                                <FontAwesomeIcon icon={service.icon} className="text-primary w-40 h-40 my-4" />
+                                <FontAwesomeIcon icon={service.icon} className="text-muted group-hover:text-primary w-40 h-40 my-4" />
                                 <CardTitle className="text-lg">{service.title}</CardTitle>
                             </CardHeader>
                             <CardContent className="pt-2">

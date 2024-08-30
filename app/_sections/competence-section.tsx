@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import IconCloud from "@/components/icon-cloud"
+import { CompetencesParcours } from "@/components/competences-parcours"
+
 
 
 
@@ -76,22 +78,7 @@ export const CompetenceSection = () => {
                                 ))}
                             </CardContent>
                         </Card>
-                        <Card className="bg-secondary h-full">
-                            <CardHeader>
-                                <h4 className="text-xl">Parcours</h4>
-                            </CardHeader>
-                            <CardContent>
-                                <ul className="space-y-4">
-                                    {background.map((item, index) => (
-                                        <li key={index} className="border-b pb-2 last:border-b-0">
-                                            <span className="block text-sm font-semibold">{item.year}</span>
-                                            <h5 className="text-base font-medium">{item.title}</h5>
-                                            <p className="text-sm text-muted-foreground">{item.institution}</p>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </CardContent>
-                        </Card>
+                        <CompetencesParcours background={background} />
                         <Card className=" col-span-3 h-full">
                             <CardHeader>
                                 <h4 className="text-xl">Technologies que j&apos;ai utilisées</h4>

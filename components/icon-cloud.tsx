@@ -58,7 +58,12 @@ const IconCloudInner = memo(({ icons, onIconClick }: DynamicCloudProps) => {
         alt={`${icon.name} icon`}
         width={48}
         height={48}
-        style={{ width: 'auto', height: 'auto', maxWidth: '48px', maxHeight: '48px' }}
+        style={{ 
+          width: 'auto', 
+          height: 'auto', 
+          maxWidth: '48px', 
+          maxHeight: '48px',
+        }}
       />
     </a>
   ));
