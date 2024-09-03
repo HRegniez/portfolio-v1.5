@@ -41,14 +41,14 @@ export const HeroOrbit = () => {
                     className="absolute left-[56svw] top-[10vh] sm:top-[10vh] w-24 h-24 sm:w-16 sm:h-16"
                     duration={100}
                     delay={delay}
-                    radius={isSmallScreen ? 160 : 240}
+                    radius={isSmallScreen ? 100 : 240}
                 >
                     <div 
                         className="relative whitespace-nowrap overflow-visible "
                         onMouseEnter={() => setHoveredName(name)}
                         onMouseLeave={() => setHoveredName('')}
                     >
-                        <Icon className={`border-none text-muted hover:text-primary hover:scale-110 transition-all duration-300 ${className}`}/>
+                        <Icon className={`border-none w-full text-muted hover:text-primary hover:scale-110 transition-all duration-300 ${className}`}/>
                         {hoveredName === name && (
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-background text-foreground text-sm rounded shadow">
                                 {name}
@@ -61,10 +61,10 @@ export const HeroOrbit = () => {
             {innerOrbitData.map(({ Icon, delay, className, name }, index) => (
                 <OrbitingCircles
                     key={index}
-                    className="absolute left-[55svw] top-[8vh] sm:top-[12vh] w-24 h-24 sm:w-16 sm:h-16"
+                    className="absolute left-[55svw] top-[8vh] sm:top-[12vh] w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
                     duration={60}
                     delay={delay}
-                    radius={isSmallScreen ? 70 : 100}
+                    radius={isSmallScreen ? 50 : 100}
                     reverse
                 >
                     <div 
