@@ -4,7 +4,7 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card"
 
 export default function CompetencesParcours({ background }: { background: any[] }) {
     return (
-    <Card className="bg-secondary h-full">
+    <Card className="bg-secondary rounded-none sm:rounded-xl h-full mb-8">
         <CardHeader>
             <h4 className="text-xl">Parcours</h4>
         </CardHeader>

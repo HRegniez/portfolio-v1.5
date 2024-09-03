@@ -45,17 +45,17 @@ const servicesData = [
 export const ProfileServices = () => {
     return (
         <div>
-            <MarginWrapper className="my-8">
-                <h3 className="text-xl">Services</h3>
-                <Marquee pauseOnHover className="my-8">
+            <MarginWrapper className="my-8 sm:my-16">
+                <h3 className="text-lg sm:text-xl font-bold mx-4 sm:mx-0 mb-8 sm:mb-8">Services</h3>
+                <Marquee pauseOnHover className="my-4 sm:my-8">
                     {servicesData.map((service, index) => (
-                        <Card key={index} className="p-4 group hover:bg-muted w-80">
-                            <CardHeader className="flex flex-col items-center gap-2 p-0">
-                                <FontAwesomeIcon icon={service.icon} className="text-muted group-hover:text-primary w-40 h-40 my-4" />
-                                <CardTitle className="text-lg">{service.title}</CardTitle>
+                        <Card key={index} className="p-2 sm:p-4 group hover:bg-muted w-52 sm:w-80 transition-transform duration-300 ease-in-out hover:scale-105">
+                            <CardHeader className="flex flex-col items-center gap-1 sm:gap-2 p-0">
+                                <FontAwesomeIcon icon={service.icon} className="text-muted group-hover:text-primary w-24 h-24 sm:w-40 sm:h-40 my-2 sm:my-4" />
+                                <CardTitle className="text-base sm:text-lg">{service.title}</CardTitle>
                             </CardHeader>
-                            <CardContent className="pt-2">
-                                <p>{service.description}</p>
+                            <CardContent className="pt-1 p-2 sm:p-6 sm:pt-2">
+                                <p className="text-sm sm:text-base">{service.description}</p>
                             </CardContent>
                         </Card>
                     ))}

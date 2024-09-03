@@ -1,18 +1,26 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Image from "next/image"
 import IconCloud from "@/components/icon-cloud"
 import CompetencesParcours from "@/components/competences-parcours"
-
-
+import { FaHtml5, FaCss3Alt, FaJs, FaReact } from 'react-icons/fa'
+import { SiNextdotjs, SiTailwindcss } from 'react-icons/si'
 
 const technologies = [
-    { name: "HTML", icon: "/icons/icons8-html-5.svg" },
-    { name: "CSS", icon: "/icons/icons8-css3.svg" },
-    { name: "JS", icon: "/icons/icons8-javascript.svg" },
-    { name: "REACT", icon: "/icons/icons8-réagir.svg" },
-    { name: "NEXT JS", icon: "/icons/next-js-icon-seeklogo.svg" },
-    { name: "TAILWIND", icon: "/icons/Tailwind_CSS_Logo.svg" }
-]
+    { name: "HTML", Icon: FaHtml5 },
+    { name: "CSS", Icon: FaCss3Alt },
+    { name: "JS", Icon: FaJs },
+    { name: "REACT", Icon: FaReact },
+    { name: "NEXT JS", Icon: SiNextdotjs },
+    { name: "TAILWIND", Icon: SiTailwindcss }
+] as const;
+
+const technologyColors: Record<typeof technologies[number]['name'], string> = {
+    HTML: "text-orange-500",
+    CSS: "text-blue-500",
+    JS: "text-yellow-400",
+    REACT: "text-cyan-400",
+    "NEXT JS": "text-white",
+    TAILWIND: "text-cyan-400"
+};
 
 const background = [
     { year: "2013", title: "A-level (équivalent Bac-S)", institution: "St Julians School - Newport, UK" },
@@ -53,40 +61,32 @@ const pastTech = [
 
 export const CompetenceSection = () => {
     return (
-        <Card className="w-full">
-                    <CardHeader>
-                        <CardTitle className="text-xl">Mes compétences</CardTitle>
-                    </CardHeader>
-                    <CardContent className="md:grid grid-cols-3 gap-8">
-                        <Card className=" col-span-2 h-full">
-                            <CardHeader>
-                                <h4 className="text-xl">J&apos;aime travailler avec</h4>
-                            </CardHeader>
-                            <CardContent className="grid grid-cols-3 gap-4">
-                                {technologies.map((tech, index) => (
-                                    <div key={index} className="flex flex-col items-center justify-center p-2 h-40">
-                                        <Image 
-                                            src={tech.icon} 
-                                            alt={`${tech.name} icon`} 
-                                            width={80} 
-                                            height={80}
-                                            style={{ width: 'auto', height: 'auto', maxWidth: '80px', maxHeight: '80px' }}
-                                        />
-                                        <h5 className="mt-2 text-sm">{tech.name}</h5>
-                                    </div>
-                                ))}
-                            </CardContent>
-                        </Card>
-                        <CompetencesParcours background={background} />
-                        <Card className=" col-span-3 h-full">
-                            <CardHeader>
-                                <h4 className="text-xl">Technologies que j&apos;ai utilisées</h4>
-                            </CardHeader>
-                            <CardContent className="flex w-full justify-between gap-8 max-w-5xl my-8 mx-auto">
-                                <IconCloud icons={pastTech} />
-                            </CardContent>
-                        </Card>
+        <Card className="w-full p-0 sm:p-6">
+            <CardHeader>
+                <CardTitle className="text-xl">Mes compétences</CardTitle>
+            </CardHeader>
+            <CardContent className="md:grid grid-cols-3 p-0 sm:p-6 gap-8">
+                <Card className="bg-background/50 p-0 sm:p-8 col-span-2 h-full">
+
+                    <CardContent className="sm:grid flex items-center flex-col  grid-cols-3 gap-2 sm:gap-8 mt-8">
+                        {technologies.map((tech, index) => (
+                            <div key={index} className="flex flex-col w-28  items-center justify-center p-2 group relative">
+                                <tech.Icon className={`w-20 h-20 mb-4 ${technologyColors[tech.name]} transition-transform duration-300 ease-in group-hover:scale-110`} />
+                                <h5 className="mt-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">{tech.name}</h5>
+                            </div>
+                        ))}
                     </CardContent>
                 </Card>
+                <CompetencesParcours background={background} />
+                <Card className="p-0 sm:p-6 col-span-3 h-full">
+                    <CardHeader>
+                        <h4 className="text-xl">Technologies que j&apos;ai utilisées</h4>
+                    </CardHeader>
+                    <CardContent className="w-full p-0 sm:p-6 max-w-5xl my-8 mx-auto">
+                        <IconCloud icons={pastTech} />
+                    </CardContent>
+                </Card>
+            </CardContent>
+        </Card>
     )
 }

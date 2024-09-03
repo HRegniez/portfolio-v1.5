@@ -40,7 +40,7 @@ export type DynamicCloudProps = {
 const IconCloudInner = memo(({ icons, onIconClick }: DynamicCloudProps) => {
   const handleIconClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, icon: { name: string; icon: string; description: string }) => {
     e.preventDefault();
-    console.log('Icon clicked:', icon);
+
     if (onIconClick) {
       onIconClick(icon);
     }
@@ -125,7 +125,7 @@ export default function IconCloud({ icons, onIconClick }: DynamicCloudProps) {
   if (!mounted) return null;
 
   return (
-    <div className="flex flex-col md:flex-row w-full justify-between gap-8">
+    <div className="flex flex-col md:flex-row w-full justify-between gap-0 sm:gap-8">
       <div className="w-full md:w-2/3 lg:w-3/4"> {/* Adjusted width */}
         <IconCloudInner icons={icons} onIconClick={handleIconClick} />
       </div>

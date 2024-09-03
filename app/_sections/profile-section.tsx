@@ -16,10 +16,10 @@ export const ProfileSection = () => {
                             Profile
                         </h2>
                     </CardHeader>
-                    <CardContent className="flex flex-col gap-8 ">
-                        <div className="flex flex-col gap-8">
+                    <CardContent className="p-0 sm:p-6">
+                        
                             <ProfileAboutMe />
-                        </div>
+                        
                     </CardContent>
                 </Card>
             </MarginWrapper>

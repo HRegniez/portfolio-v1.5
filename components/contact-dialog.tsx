@@ -40,7 +40,7 @@ export const ContactDialog = ( ) => {
                         id="message"
                         placeholder="Message"
                     />
-                    <Button type="submit">Envoyer</Button>
+                    <Button type="submit" className="bg-secondary hover:bg-primary">Envoyer</Button>
                 </form>
             </DialogContent>
         </Dialog>

@@ -48,7 +48,7 @@ export default function RootLayout({
           </NavigationMenu>
         </header>
         {children}
-        <footer className="h-16 bg-secondary">
+        <footer className="h-16 sm:bg-secondary">
           <div className="flex justify-between items-center max-w-[1200px] py-4 sm:mx-[auto] px-4">
             <p className="text-sm">© 2024 - Henri Regniez</p>
           </div>

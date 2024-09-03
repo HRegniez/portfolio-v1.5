@@ -115,7 +115,7 @@ export const ProjectsSection = () => {
     };
 
     return (
-        <Card className="bg-muted my-16">
+        <Card className="bg-muted rounded-none sm:rounded-xl my-0 sm:my-16">
             <CardHeader >
                 <h2 className="text-2xl font-bold">
                     Projets
@@ -124,7 +124,7 @@ export const ProjectsSection = () => {
             <CardContent>
                 <div className="md:grid grid-cols-2 gap-4 ">
                     {projects.slice(0, visibleProjects).map((project) => (
-                        <Card key={project.id} className="w-full h-96 bg-primary sm:my-8 rounded-lg shadow-lg overflow-hidden relative mb-4 md:mb-0 group hover:scale-[1.02] transition-transform duration-1000 ease-in-out">
+                        <Card key={project.id} className="w-full h-64 sm:h-96 bg-primary sm:my-8 rounded-lg shadow-lg overflow-hidden relative mb-4 md:mb-0 group hover:scale-[1.02] transition-transform duration-1000 ease-in-out">
                             <CardContent className="relative p-0 h-full flex flex-col justify-end">
                                 <div className="absolute inset-0 transition-transform duration-300 ease-in group-hover:scale-105">
                                     <Image 
