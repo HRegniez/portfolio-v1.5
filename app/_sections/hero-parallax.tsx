@@ -63,7 +63,7 @@ export const HeroParallax = ({ children }: { children: React.ReactNode }) => {
           translateX,
           opacity,
         }}
-        className="mt-[800px] sm:mt-[500px] md:mt-[100px]"
+        className="mt-[500px] sm:mt-[300px] md:mt-[100px]"
       >
         {children}
       </motion.div>

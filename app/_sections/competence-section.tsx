@@ -80,7 +80,7 @@ export const CompetenceSection = () => {
                 <CompetencesParcours background={background} />
                 <Card className="p-0 sm:p-6 col-span-3 h-full">
                     <CardHeader>
-                        <h4 className="text-xl">Technologies que j&apos;ai utilisées</h4>
+                        <h4 className="text-xl">Experiences</h4>
                     </CardHeader>
                     <CardContent className="w-full p-0 sm:p-6 max-w-5xl my-8 mx-auto">
                         <IconCloud icons={pastTech} />
