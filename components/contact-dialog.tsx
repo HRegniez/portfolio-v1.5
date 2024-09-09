@@ -6,17 +6,18 @@ import { Button } from "./ui/button"
 import { Label } from "./ui/label"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
+import ContactSvg from "./animSvg/ContactSvg"
 
 export const ContactDialog = ( ) => {
     
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className="text-xl bg-secondary">Contactez-moi</Button>
+                <Button className="text-xl h-10 bg-secondary hover:bg-primary-foreground hover:text-primary">Contactez-moi <ContactSvg className="ml-4 w-6 h-6"/></Button>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
-                    <DialogTitle>Contactez-moi</DialogTitle>
+                    <DialogTitle>Contactez-moi </DialogTitle>
                     <DialogDescription>
                         En espérant vous revoir prochainement !
                     </DialogDescription>

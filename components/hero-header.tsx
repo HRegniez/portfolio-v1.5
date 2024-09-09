@@ -10,7 +10,7 @@ export const HeroHeader = () => {
             Bonjour, Je suis Henri
           </h1>
           <div className="flex flex-col gap-2 w-fit">
-            <p className="text-2xl md:text-7xl font-bold">Bonjour, je suis</p>
+            <p className="text-2xl md:text-7xl font-bold">Bonjour,</p>
           </div>
           <div className="flex items-center gap-2">
             <p className="text-2xl md:text-7xl font-bold" >Je suis</p>

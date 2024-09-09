@@ -8,8 +8,8 @@ export const ProfileAboutMe = () => {
             <CardTitle className="text-xl mb-4">A propos de moi</CardTitle>
             </CardHeader>
             <CardContent className="grid grid-cols-1 sm:grid-cols-3 sm:gap-4 ">
-                <article className="relative pl-2 col-span-2 mr-4 gap-4 h-[25svh] mb-8 pr-4">
-                    <div className="flex flex-col gap-4 h-full overflow-y-scroll">
+                <article className="relative pl-2 col-span-2 mr-4 gap-4 h-[25svh] sm:h-auto mb-8 pr-4">
+                    <div className="flex flex-col gap-4 h-full overflow-y-scroll sm:overflow-y-hidden">
                         <p className="text-muted-foreground ">
                             Bonjour ! Je suis <strong className="text-foreground">Henri</strong>, développeur web franco-britannique <strong className="text-foreground">passionné</strong> par les solutions web innovantes.
                         </p>

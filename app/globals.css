@@ -6,7 +6,7 @@
   :root {
     --background: 259 100% 10%;
     --foreground: -1.9 24.9% 91.3%;
-    --card: 259 100% 10%;
+    --card: 259 100% 5% 0.5;
     --card-foreground: -1.9 24.9% 91.3%;
     --popover: 259 100% 10%;
     --popover-foreground: -1.9 24.9% 91.3%;
@@ -41,3 +41,4 @@
     @apply bg-background text-foreground;
   }
 }
+

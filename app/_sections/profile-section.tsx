@@ -10,7 +10,7 @@ export const ProfileSection = () => {
     return (
         <>
             <MarginWrapper>
-                <Card variant="ghost">
+                <Card>
                     <CardHeader>
                         <h2 className="text-2xl font-bold mb-4">
                             Profile
