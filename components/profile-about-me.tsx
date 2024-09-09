@@ -26,7 +26,7 @@ export const ProfileAboutMe = () => {
 
                 </article>
                 <Card className="bg-background relative">
-                    <div className="w-[140px] h-[140px]  lg:w-[170px] lg:h-[170px] col-span-1  overflow-hidden bg-black rounded-full absolute -top-6 -left-4 md:-top-16 md-left-10 shadow-md">
+                    <div className="w-[140px] h-[140px]  lg:w-[170px] lg:h-[170px] col-span-1  overflow-hidden bg-black rounded-full absolute -top-6 -left-4 md:-top-16 md:-left-10 shadow-md">
                         <Image src="/images/profile.webp" className="object-cover scale-110" alt="Henri" width={180} height={180} />
                     </div>
                     <CardContent className="flex flex-col h-full gap-2 my-4">

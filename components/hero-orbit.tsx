@@ -74,9 +74,9 @@ export const HeroOrbit = () => {
                     >
                         <Icon className={`border-none text-muted hover:text-primary hover:scale-110 transition-all duration-300 ${className}`}/>
                         {hoveredName === name && (
-                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-none text-foreground text-sm rounded shadow">
+                            <p className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-transparent text-foreground text-sm rounded">
                                 {name}
-                            </div>
+                            </p>
                         )}
                     </div>
                 </OrbitingCircles>
